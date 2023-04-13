@@ -1,30 +1,54 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>faith the unholy trinity: a text-based adventure game</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width,
+				initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<title>Rock Paper Scissor</title>
 </head>
 <body>
-  <h1>Faith: The Unholy Trinity - Episode 1</h1>
-  <p>You are Father Gabriel, a priest who's been tasked with investigating a strange cult in the woods. Your sidekick, Asmodeus, a demon who's sworn to protect you at all costs. As you make your way through the forest, you suddenly find yourself surrounded by a pack of monsters! Asmodeus is ready for combat...</p>
-  <p>The monsters attack with vicious claws and fangs! Asmodeus avoids their strikes and retaliates with a flurry of punches and kicks. Can you help him fight off the monsters and survive the night in the haunted forest?</p>
-  <p>The monsters are tough, but you're not a stranger to danger. Asmodeus looks to you for guidance in the fight. Will you choose rock, paper, or scissors?</p>
-  <button id="rps">Rock</button>
-  <button id="paper">Paper</button>
-  <button id="scissors">Scissors</button>
-  <script>
-    const rpsButton = document.getElementById("rps");
-    const paperButton = document.getElementById("paper");
-    const scissorsButton = document.getElementById("scissors");
+	<section class="game">
+		<!--Title -->
+		<div class="title">Rock Paper Scissor</div>
+		
+		<!--Display Score of player and computer -->
+		<div class="score">
+			<div class="playerScore">
+				<h2>Player</h2>
+				<p class="p-count count">0</p>
 
-    rpsButton.addEventListener("click", function() {
-      const playerChoice = "rps";
-      console.log("You picked ", playerChoice);
-      const monsterAttack = Math.floor(Math.random() * 3) + 1;
-      let randomNumber = Math.round(Math.random() * 3) + 1;
-      if (playerChoice === monsterAttack) {
-        alert("You both chose ", playerChoice);
-        console.log("Tie!");
-      } else if (playerChoice === "rps") {
-        alert("You choose ", playerChoice);
-        console.log("The monster chooses ", (monsterAttack === 2 ? "scissors
+			</div>	
+			<div class="computerScore">
+				<h2>Computer</h2>
+				<p class="c-count count">0</p>
+
+			</div>
+		</div>
+		
+		<div class="move">Choose your move</div>
+		
+		<!--Number of moves left before game ends -->
+		<div class="movesleft">Moves Left: 10 </div>
+		
+		<!--Options available to player to play game -->
+		<div class="options">
+			<button class="rock">Rock</button>
+			<button class="paper">Paper</button>
+			<button class="scissor">Scissors</button>	
+		</div>
+		
+		<!--Final result of game -->
+		<div class="result"></div>
+		
+		<!--Reload the game -->
+		<button class="reload"></button>
+
+	</section>
+
+	<script src="app.js"></script>
+</body>
+</html>
